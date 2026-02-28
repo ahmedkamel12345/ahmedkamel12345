@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="account_report_template_general" model="account.report.template">
+        <field name="name">General Ledger</field>
+        <field name="code">general_ledger</field>
+        <field name="report_type">general</field>
+        <field name="description">General ledger lines with flexible filters.</field>
+    </record>
+
+    <record id="account_report_template_receivable" model="account.report.template">
+        <field name="name">Customer Balance</field>
+        <field name="code">customer_balance</field>
+        <field name="report_type">receivable</field>
+        <field name="description">Receivable entries by customer.</field>
+    </record>
+
+    <record id="account_report_template_payable" model="account.report.template">
+        <field name="name">Vendor Balance</field>
+        <field name="code">vendor_balance</field>
+        <field name="report_type">payable</field>
+        <field name="description">Payable entries by vendor.</field>
+    </record>
+
+    <record id="account_report_template_tax" model="account.report.template">
+        <field name="name">Tax Lines</field>
+        <field name="code">tax_lines</field>
+        <field name="report_type">tax</field>
+        <field name="description">Tax-related journal items only.</field>
+    </record>
+
+    <record id="account_report_template_journal" model="account.report.template">
+        <field name="name">Journal Items</field>
+        <field name="code">journal_items</field>
+        <field name="report_type">journal</field>
+        <field name="description">Detailed journal items for auditing.</field>
+    </record>
+</odoo>

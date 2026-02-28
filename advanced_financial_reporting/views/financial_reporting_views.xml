@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_financial_statement_report_tree" model="ir.ui.view">
+        <field name="name">financial.statement.report.tree</field>
+        <field name="model">financial.statement.report</field>
+        <field name="arch" type="xml">
+            <list string="Financial Statements" create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_open_journal_item" type="object" string="Drill Down" class="btn-primary"/>
+                </header>
+                <field name="date"/>
+                <field name="company_id"/>
+                <field name="statement_type"/>
+                <field name="statement_section"/>
+                <field name="journal_id"/>
+                <field name="account_id"/>
+                <field name="partner_id"/>
+                <field name="branch_id"/>
+                <field name="salesperson_id"/>
+                <field name="parent_state"/>
+                <field name="debit" sum="Total Debit"/>
+                <field name="credit" sum="Total Credit"/>
+                <field name="balance" sum="Total Balance"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_financial_statement_report_pivot" model="ir.ui.view">
+        <field name="name">financial.statement.report.pivot</field>
+        <field name="model">financial.statement.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Financial Statements Analysis">
+                <field name="company_id" type="row"/>
+                <field name="statement_type" type="row"/>
+                <field name="statement_section" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="balance" type="measure"/>
+                <field name="debit" type="measure"/>
+                <field name="credit" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_financial_statement_report_graph" model="ir.ui.view">
+        <field name="name">financial.statement.report.graph</field>
+        <field name="model">financial.statement.report</field>
+        <field name="arch" type="xml">
+            <graph string="Financial Statements Graph" type="bar">
+                <field name="date" interval="month"/>
+                <field name="balance" type="measure"/>
+                <field name="statement_section"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_financial_statement_report_search" model="ir.ui.view">
+        <field name="name">financial.statement.report.search</field>
+        <field name="model">financial.statement.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Financial Statements">
+                <field name="date"/>
+                <field name="company_id"/>
+                <field name="journal_id"/>
+                <field name="account_id"/>
+                <field name="partner_id"/>
+                <field name="analytic_account_id"/>
+                <field name="branch_id"/>
+                <field name="warehouse_id"/>
+                <field name="salesperson_id"/>
+                <field name="statement_type"/>
+                <field name="statement_section"/>
+                <filter string="Posted" name="posted" domain="[('parent_state', '=', 'posted')]"/>
+                <searchpanel>
+                    <field name="company_id"/>
+                    <field name="statement_type"/>
+                    <field name="statement_section"/>
+                    <field name="journal_id"/>
+                </searchpanel>
+                <group expand="0" string="Group By">
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                    <filter string="Type" name="group_type" context="{'group_by': 'statement_type'}"/>
+                    <filter string="Section" name="group_section" context="{'group_by': 'statement_section'}"/>
+                    <filter string="Month" name="group_month" context="{'group_by': 'date:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_financial_statement_report" model="ir.actions.act_window">
+        <field name="name">Financial Statements</field>
+        <field name="res_model">financial.statement.report</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="view_financial_statement_report_search"/>
+    </record>
+
+    <record id="view_financial_ratio_report_tree" model="ir.ui.view">
+        <field name="name">financial.ratio.report.tree</field>
+        <field name="model">financial.ratio.report</field>
+        <field name="arch" type="xml">
+            <list string="Financial Ratios" create="0" edit="0" delete="0">
+                <field name="period_label"/>
+                <field name="company_id"/>
+                <field name="current_ratio"/>
+                <field name="quick_ratio"/>
+                <field name="cash_ratio"/>
+                <field name="gross_profit_margin"/>
+                <field name="net_profit_margin"/>
+                <field name="operating_margin"/>
+                <field name="roa"/>
+                <field name="roe"/>
+                <field name="inventory_turnover"/>
+                <field name="receivable_turnover"/>
+                <field name="revenue" sum="Revenue"/>
+                <field name="comparison_revenue" sum="Comparison Revenue"/>
+                <field name="change_percentage"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_financial_ratio_report_pivot" model="ir.ui.view">
+        <field name="name">financial.ratio.report.pivot</field>
+        <field name="model">financial.ratio.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Financial Ratios Analysis">
+                <field name="company_id" type="row"/>
+                <field name="period_start" interval="month" type="col"/>
+                <field name="current_ratio" type="measure"/>
+                <field name="quick_ratio" type="measure"/>
+                <field name="cash_ratio" type="measure"/>
+                <field name="gross_profit_margin" type="measure"/>
+                <field name="net_profit_margin" type="measure"/>
+                <field name="operating_margin" type="measure"/>
+                <field name="roa" type="measure"/>
+                <field name="roe" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_financial_ratio_report_graph" model="ir.ui.view">
+        <field name="name">financial.ratio.report.graph</field>
+        <field name="model">financial.ratio.report</field>
+        <field name="arch" type="xml">
+            <graph string="Financial Ratios Graph" type="line">
+                <field name="period_start" interval="month"/>
+                <field name="current_ratio" type="measure"/>
+                <field name="quick_ratio" type="measure"/>
+                <field name="cash_ratio" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_financial_ratio_report_search" model="ir.ui.view">
+        <field name="name">financial.ratio.report.search</field>
+        <field name="model">financial.ratio.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Financial Ratios">
+                <field name="company_id"/>
+                <field name="period_start"/>
+                <filter string="Previous Period" name="cmp_prev" context="{'comparison_mode': 'previous_period'}"/>
+                <filter string="Same Period Last Year" name="cmp_ly" context="{'comparison_mode': 'last_year'}"/>
+                <searchpanel>
+                    <field name="company_id"/>
+                </searchpanel>
+                <group expand="0" string="Group By">
+                    <filter string="Company" name="group_company" context="{'group_by': 'company_id'}"/>
+                    <filter string="Month" name="group_month" context="{'group_by': 'period_start:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_financial_ratio_report" model="ir.actions.act_window">
+        <field name="name">Financial Ratios Comparison</field>
+        <field name="res_model">financial.ratio.report</field>
+        <field name="view_mode">list,pivot,graph</field>
+        <field name="search_view_id" ref="view_financial_ratio_report_search"/>
+    </record>
+
+    <menuitem id="menu_advanced_financial_reporting_root" name="Advanced Financial Reporting" parent="account.menu_finance_reports" sequence="95" groups="advanced_financial_reporting.group_financial_analyst"/>
+    <menuitem id="menu_financial_statement_report" name="Financial Statements" parent="menu_advanced_financial_reporting_root" action="action_financial_statement_report" sequence="10" groups="advanced_financial_reporting.group_financial_analyst"/>
+    <menuitem id="menu_financial_ratio_report" name="Financial Ratios" parent="menu_advanced_financial_reporting_root" action="action_financial_ratio_report" sequence="20" groups="advanced_financial_reporting.group_financial_analyst"/>
+</odoo>

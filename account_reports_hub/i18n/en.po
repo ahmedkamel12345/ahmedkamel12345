@@ -1,0 +1,37 @@
+# Translation for English
+msgid ""
+msgstr ""
+"Project-Id-Version: account_reports_hub 16.0\n"
+"POT-Creation-Date: 2026-01-01 00:00+0000\n"
+"PO-Revision-Date: 2026-01-01 00:00+0000\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting Reports Hub"
+msgstr "Accounting Reports Hub"
+
+msgid "Customizable accounting reports with advanced filters"
+msgstr "Customizable accounting reports with advanced filters"
+
+msgid "Custom Accounting Reports"
+msgstr "Custom Accounting Reports"
+
+msgid "Report Templates"
+msgstr "Report Templates"
+
+msgid "Run Reports"
+msgstr "Run Reports"
+
+msgid "Accounting Reports Filter"
+msgstr "Accounting Reports Filter"
+
+msgid "Accounting Report Filters"
+msgstr "Accounting Report Filters"
+
+msgid "Show Report"
+msgstr "Show Report"
+
+msgid "Cancel"
+msgstr "Cancel"
