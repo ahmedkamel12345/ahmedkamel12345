@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_report_filter_wizard_form" model="ir.ui.view">
+        <field name="name">account.report.filter.wizard.form</field>
+        <field name="model">account.report.filter.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Accounting Report Filters">
+                <group>
+                    <field name="template_id"/>
+                    <field name="company_id"/>
+                    <field name="move_state"/>
+                </group>
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <group>
+                    <field name="journal_ids" widget="many2many_tags"/>
+                    <field name="account_ids" widget="many2many_tags"/>
+                    <field name="partner_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button name="action_open_filtered_lines"
+                            type="object"
+                            string="Show Report"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_account_report_filter_wizard" model="ir.actions.act_window">
+        <field name="name">Accounting Reports Filter</field>
+        <field name="res_model">account.report.filter.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_account_report_filter"
+              name="Run Reports"
+              parent="menu_account_report_hub_root"
+              action="action_account_report_filter_wizard"
+              sequence="10"/>
+</odoo>

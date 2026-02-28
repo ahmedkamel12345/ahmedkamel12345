@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_financial_statement_report_analyst,financial.statement.report analyst,model_financial_statement_report,advanced_financial_reporting.group_financial_analyst,1,0,0,0
+access_financial_ratio_report_analyst,financial.ratio.report analyst,model_financial_ratio_report,advanced_financial_reporting.group_financial_analyst,1,0,0,0
+access_financial_reporting_wizard_analyst,financial.reporting.wizard analyst,model_financial_reporting_wizard,advanced_financial_reporting.group_financial_analyst,1,1,1,1

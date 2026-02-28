@@ -1,0 +1,88 @@
+# Translation for Arabic
+msgid ""
+msgstr ""
+"Project-Id-Version: account_reports_hub 16.0\n"
+"POT-Creation-Date: 2026-01-01 00:00+0000\n"
+"PO-Revision-Date: 2026-01-01 00:00+0000\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Accounting Reports Hub"
+msgstr "مركز التقارير المحاسبية"
+
+msgid "Customizable accounting reports with advanced filters"
+msgstr "تقارير محاسبية قابلة للتخصيص مع فلاتر متقدمة"
+
+msgid "Custom Accounting Reports"
+msgstr "تقارير محاسبية مخصصة"
+
+msgid "Report Templates"
+msgstr "قوالب التقارير"
+
+msgid "Run Reports"
+msgstr "تشغيل التقارير"
+
+msgid "Accounting Reports Filter"
+msgstr "فلتر التقارير المحاسبية"
+
+msgid "Accounting Report Filters"
+msgstr "فلاتر التقرير المحاسبي"
+
+msgid "Show Report"
+msgstr "عرض التقرير"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Report Template"
+msgstr "قالب التقرير"
+
+msgid "Journals"
+msgstr "دفاتر اليومية"
+
+msgid "Accounts"
+msgstr "الحسابات"
+
+msgid "Partners"
+msgstr "الشركاء"
+
+msgid "All Entries"
+msgstr "كل القيود"
+
+msgid "Posted Entries"
+msgstr "قيود مرحلة"
+
+msgid "Draft Entries"
+msgstr "قيود مسودة"
+
+msgid "General Ledger"
+msgstr "دفتر الأستاذ العام"
+
+msgid "Customer Balance"
+msgstr "رصيد العملاء"
+
+msgid "Vendor Balance"
+msgstr "رصيد الموردين"
+
+msgid "Tax Lines"
+msgstr "بنود الضرائب"
+
+msgid "Journal Items"
+msgstr "قيود اليومية"
+
+msgid "Base Domain"
+msgstr "الدومين الأساسي"
+
+msgid "Template code must be unique."
+msgstr "يجب أن يكون كود القالب فريدًا."
+
+msgid "Base domain must evaluate to a list."
+msgstr "يجب أن تكون نتيجة الدومين الأساسي قائمة."
+
+msgid "Invalid base domain syntax for template '%s': %s"
+msgstr "صيغة الدومين الأساسي غير صحيحة في القالب '%s': %s"
+
+msgid "Optional base domain in python list format. Example: [('debit', '>', 0)]"
+msgstr "دومين أساسي اختياري بصيغة قائمة بايثون. مثال: [('debit', '>', 0)]"

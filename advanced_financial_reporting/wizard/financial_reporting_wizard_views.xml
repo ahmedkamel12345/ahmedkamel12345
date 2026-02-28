@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_financial_reporting_wizard_form" model="ir.ui.view">
+        <field name="name">financial.reporting.wizard.form</field>
+        <field name="model">financial.reporting.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Financial Reporting Filters">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="comparison_mode"/>
+                        <field name="target_move"/>
+                    </group>
+                    <group>
+                        <field name="company_ids" widget="many2many_tags"/>
+                        <field name="journal_ids" widget="many2many_tags"/>
+                        <field name="account_ids" widget="many2many_tags"/>
+                        <field name="analytic_account_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="partner_ids" widget="many2many_tags"/>
+                    <field name="branch_ids" widget="many2many_tags"/>
+                    <field name="warehouse_ids" widget="many2many_tags"/>
+                    <field name="salesperson_ids" widget="many2many_tags"/>
+                </group>
+                <footer>
+                    <button string="Open Financial Statements" type="object" name="action_open_financial_statements" class="btn-primary"/>
+                    <button string="Open Ratios Comparison" type="object" name="action_open_financial_ratios" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_financial_reporting_wizard" model="ir.actions.act_window">
+        <field name="name">Financial Reporting Workspace</field>
+        <field name="res_model">financial.reporting.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_financial_reporting_workspace" name="Reporting Workspace" parent="advanced_financial_reporting.menu_advanced_financial_reporting_root" action="action_financial_reporting_wizard" sequence="5" groups="advanced_financial_reporting.group_financial_analyst"/>
+</odoo>
